@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService} from '../characters/characters.service';
 import { CommonModule} from '@angular/common';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { log } from 'console';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-characters',
@@ -11,49 +10,20 @@ import { log } from 'console';
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
-export class CharactersComponent  implements OnInit{
+export class CharactersComponent implements OnInit{
 
-  characters: any[] = [];
+  characters: any = [];
 
-  limit: number = 1;
+  constructor(private service: CharactersService){
 
-  filtro: any;
+  }
 
-  constructor(private servicio: CharactersService, private fb: FormBuilder){
-    this.filtro = this.fb.group({
-      limit:['10', [Validators.max(100)]],
-    affiliation: ['']
+  ngOnInit(): void {
+    this.service.obtenerPersonajes().subscribe( resp =>{
+      this.characters = resp.items;
+      console.log(this.characters)
     })
   }
-  ngOnInit(): void {
-    this.cargardatos();
-  }
-  cargardatos(){
-    this.servicio.obtenerdatos(this.filtro.value).subscribe((res: any) => {  
-      this.characters = res;
-      })
-  }
-
-
-  filtrar() {
-    console.log(this.filtro.value);
-    this.cargardatos();
-    this.enviar()
-    }
-
-    enviar(){
-      this.servicio.enviardatos(this.filtro.value).subscribe((rest: any) => {
-        console.log(rest);
-      });
-    }
-
-    mostrarPersonaje(id: number){
-      this.servicio.obtenerPersonaje(id).subscribe((res: any) => {
-        console.log(res);
-      });
-      this.servicio.actualizarPersonaje(this.filtro.value , id).subscribe((res: any) => {
-        console.log(res);
-      });
-    }
-
+  
 }
+

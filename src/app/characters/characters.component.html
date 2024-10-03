@@ -1,44 +1,37 @@
-<form [formGroup]="filtro">
-    <button (click)="filtrar()">Filtro</button><br>
-    <input type="text" formControlName="affiliation" placeholder="Afiliación"><br>
-    <input type="number" formControlName="limit" placeholder="Limite">
 
-
-
-</form>
 <div>
-    <div>
-      <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt="" style="width: 900px; flex-direction: column; margin-left: 500px;">
-      <h1 style="margin-left: 750px;">The Dragon Ball API</h1>
-    </div>
-    <div>
-      <article *ngFor="let character of characters">
-        <div (click)="mostrarPersonaje(character.id)" style="color: white;">
-          <img [src]="character.image" alt="" height="540" width="270px">
-        </div>
-        <div>
-          <div>
-            <h2>{{character.name}}</h2>
-            <p>{{character.race}} - {{character.gender}}</p>
-          </div>
-          <div>
-            <div>
-              <p>Base KI</p>
-              <span>{{character.ki}}</span>
-            </div>
-            <div>
-              <p>Total KI</p>
-              <span>{{character.maxKi}}</span>
-            </div>
-            <div>
-              <p>Afiliation</p>
-              <span>{{character.affiliation}}</span>
-            </div>
-          </div>
-        </div>
-      </article>
-  
-    </div>
-  
-  
+  <div>
+    <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt="" class="img2">
+    <h1 style="margin-left: 750px;">The Dragon Ball API</h1>
   </div>
+  <div style="color: white;" class="cont cont2">
+    <article *ngFor="let character of characters" class="ovflw cont3">
+      <div class="cont4">
+        <img [src]="character.image" alt="" height="540" width="270px" class="animacion imgPers">
+      </div>
+      <div style="padding: 0.75rem;">
+        <div>
+          <h2>{{character.name}}</h2>
+          <p id="pe" style="margin: 0px 0px 16px;">{{character.race}} - {{character.gender}}</p>
+        </div>
+        <div style="gap: 8px;">
+          <div>
+            <p>Base KI</p>
+            <span>{{character.ki}}</span>
+          </div>
+          <div>
+            <p>Total KI</p>
+            <span>{{character.maxKi}}</span>
+          </div>
+          <div>
+            <p>Afiliation</p>
+            <span>{{character.affiliation}}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+
+</div>
