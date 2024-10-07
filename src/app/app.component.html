@@ -2,13 +2,13 @@
   <nav class="separacion">
     <img src="https://web.dragonball-api.com/images-compress/android-icon-192x192.webp" alt="" class="img1"><br>
     <div class="links">
-      <a href="#" class="links2">Docs</a>
-      <a href="#" class="links2">About</a>
+      <a routerLink="characters" class="links2"><p style="color: rgb(97, 97, 97);">Characters</p></a>
+      <a routerLink="planetas" class="links2"><p style="color: rgb(97, 97, 97);">Planets</p></a>      
       <button class="boton">SUPORT US</button>
     </div>
   </nav>
 </header><br><br>
 
 <main>
-<app-characters></app-characters>
+  <router-outlet></router-outlet>
 </main>

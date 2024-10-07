@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharactersService} from '../characters/characters.service';
 import { CommonModule} from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -23,6 +24,10 @@ export class CharactersComponent implements OnInit{
       this.characters = resp.items;
       console.log(this.characters)
     })
+  }
+
+  verInfo(){
+
   }
   
 }

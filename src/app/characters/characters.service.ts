@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CharactersService {
 
-  private api_characters = "https://dragonball-api.com/api/characters";
+  private api_characters = "https://dragonball-api.com/api/characters?limit=58";
 
   constructor(private http: HttpClient) {
 

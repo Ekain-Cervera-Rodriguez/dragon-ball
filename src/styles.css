@@ -107,6 +107,19 @@ span{
     border-top-right-radius: 0.5rem;
 }
 
+.cont4P{
+    width: 100%;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0);
+    min-height: 350px;
+    max-height: 350px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    display: flex;
+}
+
 main{
     line-height: 0.5;
 }
@@ -165,4 +178,8 @@ main{
     padding: 6px 16px;
     border-radius: 4px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#p-h-1{
+    color: white;
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PlanetasService } from './planetas.service';
 
 @Component({
   selector: 'app-planetas',
@@ -8,10 +9,18 @@ import { Component } from '@angular/core';
   templateUrl: './planetas.component.html',
   styleUrl: './planetas.component.css'
 })
-export class PlanetasComponent {
-planetas: any[] = [];
-mostrarPlaneta(arg0: any) {
-throw new Error('Method not implemented.');
-}
+export class PlanetasComponent implements OnInit{
 
+  planetas: any = [];
+
+  constructor(private service: PlanetasService){
+
+  }
+
+  ngOnInit(): void {
+    this.service.obtenerPersonajes().subscribe( resp =>{
+      this.planetas = resp.items;
+      console.log(this.planetas)
+    })
+  }
 }
