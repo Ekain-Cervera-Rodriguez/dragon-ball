@@ -7,7 +7,7 @@
   <div style="color: white;" class="cont cont2">
     <article *ngFor="let character of characters" class="ovflw cont3">
       <div class="cont4">
-        <img [src]="character.image" alt="" height="540" width="270px" class="animacion imgPers" (click)="verInfo()">
+        <a [routerLink]="character.id"><img [src]="character.image" alt="" height="540" width="270px" class="animacion imgPers"></a>
       </div>
       <div style="padding: 0.75rem;">
         <div>

@@ -12,7 +12,7 @@ export class PlanetasService {
     
   }
 
-  obtenerPersonajes(): Observable<any>{
+  obtenerPlanetas(): Observable<any>{
     return this.http.get(this.api_planetas);
   }
 }

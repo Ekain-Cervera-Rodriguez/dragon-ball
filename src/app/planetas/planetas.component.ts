@@ -18,7 +18,7 @@ export class PlanetasComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.service.obtenerPersonajes().subscribe( resp =>{
+    this.service.obtenerPlanetas().subscribe( resp =>{
       this.planetas = resp.items;
       console.log(this.planetas)
     })

@@ -2,18 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { CharactersService} from '../characters/characters.service';
 import { CommonModule} from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule, 
+    ReactiveFormsModule, 
+    RouterLink,
+  ],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
 export class CharactersComponent implements OnInit{
 
-  characters: any = [];
+  characters: any = []; 
 
   constructor(private service: CharactersService){
 
@@ -26,9 +30,15 @@ export class CharactersComponent implements OnInit{
     })
   }
 
-  verInfo(){
 
-  }
+
+
+
+
+
+
+
+  
   
 }
 

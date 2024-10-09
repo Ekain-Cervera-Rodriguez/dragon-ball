@@ -120,6 +120,19 @@ span{
     display: flex;
 }
 
+.cont4CS {
+    width: 10%;
+    position: relative;
+    background-image: url(https://web.dragonball-api.com/images-compress/89980.webp);
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
+    min-height: 350px;
+    max-height: 350px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
 main{
     line-height: 0.5;
 }

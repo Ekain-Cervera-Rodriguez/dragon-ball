@@ -7,14 +7,22 @@ import { Observable } from 'rxjs';
 })
 export class CharactersService {
 
-  private api_characters = "https://dragonball-api.com/api/characters?limit=58";
+  private api_characters = "https://dragonball-api.com/api/characters";
+
+  characters: any = [];
 
   constructor(private http: HttpClient) {
-
+    this.characters = [];
    }
 
     obtenerPersonajes(): Observable<any>{
-      return this.http.get(this.api_characters);
+      return this.http.get(`${this.api_characters}?limit=58`);
+    }
+
+    
+
+    verInfo(id: string): Observable<any>{
+      return this.http.get(`${this.api_characters}/${id}`);
     }
 
 }

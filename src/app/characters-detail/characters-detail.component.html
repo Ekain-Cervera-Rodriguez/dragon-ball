@@ -1,0 +1,44 @@
+<div>
+    <div>
+      <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt="" class="img2">
+      <h1 style="margin-left: 750px;">The Dragon Ball API</h1>
+    </div>
+    <article>
+    <div class="cont4CS">
+        <img [src]="character.image" alt="" height="540" width="270px" class="imgPers">
+    </div>
+    <div style="padding: 0.75rem;">
+        <div>
+            <h2>{{character.name}}</h2>
+            <p id="pe" style="margin: 0px 0px 16px;">{{character.race}} - {{character.gender}}</p>
+        </div>
+        <div style="gap: 8px;">
+            <div>
+                <p>Base KI</p>
+                <span>{{character.ki}}</span>
+            </div>
+            <div>
+                <p>Total KI</p>
+                <span>{{character.maxKi}}</span>
+            </div>
+            <div>
+                <p>Afiliation</p>
+                <span>{{character.affiliation}}</span>
+            </div>
+            <div>
+                <p>Transformations</p>
+                <span>{{character.transformations}}</span>
+            </div>
+            <div>
+                <p>Description</p>
+                <span style="line-height: 30px;">{{character.description}}</span>
+            </div>
+            <div>
+                <p>Planet</p>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</article>
+</div>
+  
